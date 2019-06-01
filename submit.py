@@ -135,11 +135,11 @@ def main(graph: nx.Graph, **kwargs):
             vc = min_vertex_cover(component, **kwargs)
         all_vc.update(vc)
         eprint("compressing", len(vc))
-        res, new_vc = compression.compress(component, vc)
-        if res:
-            print("compression succeeded on component of size", len(component))
-            print("old vc", len(vc), "new vc", len(new_vc))
-            sys.exit()
+        #res, new_vc = compression.compress(component, vc)
+        #if res:
+        #    print("compression succeeded on component of size", len(component))
+        #    print("old vc", len(vc), "new vc", len(new_vc))
+        #    sys.exit()
         eprint("found component vc: {}(total:{})".format(len(vc), len(all_vc)))
     return utils.unfold(all_vc, folded_verts)
 
